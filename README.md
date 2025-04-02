@@ -14,10 +14,10 @@ Responsible for loading events from Resources/Event.json.
 Deserializes JSON into a list of GameEvent objects.
 Stores them in a dictionary using the event title as the key.
 Provides:
----------------------------------------------------------
+
 GetAllEventIDs() – returns all loaded event keys.
 GetEventByID() – fetches a specific event by title.
-----------------------------------------------------------
+
 3. GameEvent.cs
 Defines the structure of a single event:
 
