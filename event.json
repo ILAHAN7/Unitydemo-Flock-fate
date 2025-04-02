@@ -1,0 +1,666 @@
+{
+    "events": [
+        {
+            "Title": "Merchant Deal",
+            "Description": "A merchant offers you a deal.",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Accept (+10 Gold, -5 Reputation)",
+                    "GoldChange": 10,
+                    "ReputationChange": -5
+                },
+                {
+                    "Description": "Decline (+5 Reputation)",
+                    "ReputationChange": 5
+                }
+            ]
+        },
+        {
+            "Title": "Wolf Attack",
+            "Description": "A pack of wolves threatens your sheep!",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Defend (-2 Sheep)",
+                    "GoldChange": -2
+                },
+                {
+                    "Description": "Ignore (-5 Sheep)",
+                    "GoldChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "A Mysterious Stranger",
+            "Description": "A hooded figure offers you an old map. Will you take it?",
+            "Type": "Special",
+            "Options": [
+                {
+                    "Description": "Accept the map (-10 Gold, +5 Reputation)",
+                    "GoldChange": -10,
+                    "ReputationChange": 5,
+                    "FollowUpEventID": "TreasureHunt"
+                },
+                {
+                    "Description": "Decline (-5 Reputation)",
+                    "ReputationChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "Treasure Hunt",
+            "Description": "Following the map, you reach an ancient ruin. What will you do?",
+            "Type": "Special",
+            "Options": [
+                {
+                    "Description": "Dig for treasure (+20 Gold, 20% risk of injury)",
+                    "GoldChange": 20,
+                    "ReputationChange": -5
+                },
+                {
+                    "Description": "Leave the ruin (+5 Reputation)",
+                    "ReputationChange": 5
+                }
+            ]
+        },
+        {
+            "Title": "A Noble's Request",
+            "Description": "A noble asks you to deliver a secret letter to the royal court.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Deliver the letter (+10 Nobles Affinity, -5 Merchant Affinity)",
+                    "NoblesAffinityChange": 10,
+                    "MerchantAffinityChange": -5
+                },
+                {
+                    "Description": "Refuse (-5 Nobles Affinity, +5 Reputation)",
+                    "NoblesAffinityChange": -5,
+                    "ReputationChange": 5
+                }
+            ]
+        },
+        {
+            "Title": "Merchant Guild Dispute",
+            "Description": "Two rival merchants argue over a trade deal. Who do you support?",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Support Merchant A (+10 Merchant Affinity, -5 Reputation)",
+                    "MerchantAffinityChange": 10,
+                    "ReputationChange": -5
+                },
+                {
+                    "Description": "Support Merchant B (+10 Reputation, -5 Merchant Affinity)",
+                    "MerchantAffinityChange": -5,
+                    "ReputationChange": 10
+                }
+            ]
+        },
+        {
+            "Title": "Bandit Ambush",
+            "Description": "Bandits block the road, demanding a toll. How will you respond?",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Pay the toll (-15 Gold, +5 Reputation)",
+                    "GoldChange": -15,
+                    "ReputationChange": 5
+                },
+                {
+                    "Description": "Fight back (-5 Militia Affinity, 50% risk of injury)",
+                    "MilitiaAffinityChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "A Harsh Winter",
+            "Description": "The winter is particularly brutal, and your sheep are struggling.",
+            "Type": "Seasonal",
+            "Options": [
+                {
+                    "Description": "Buy extra feed (-10 Gold, +5 Sheep)",
+                    "GoldChange": -10,
+                    "ReputationChange": 5
+                },
+                {
+                    "Description": "Let nature take its course (-3 Sheep, +5 Gold)",
+                    "GoldChange": 5,
+                    "ReputationChange": -3
+                }
+            ]
+        },
+        {
+            "Title": "A Secret Society",
+            "Description": "A group of masked individuals invites you to a clandestine meeting.",
+            "Type": "Special",
+            "Options": [
+                {
+                    "Description": "Attend the meeting (-10 Gold, +5 Reputation)",
+                    "GoldChange": -10,
+                    "ReputationChange": 5
+                },
+                {
+                    "Description": "Refuse and report to the nobles (+10 Nobles Affinity, -5 Reputation)",
+                    "NoblesAffinityChange": 10,
+                    "ReputationChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "The Lost Traveler",
+            "Description": "A weary traveler arrives in your village, begging for food and shelter.",
+            "Type": "Special",
+            "Options": [
+                {
+                    "Description": "Offer food and shelter (-5 Gold, +10 Reputation)",
+                    "GoldChange": -5,
+                    "ReputationChange": 10,
+                    "FollowUpEventID": "GratefulTraveler"
+                },
+                {
+                    "Description": "Turn him away (+5 Gold, -10 Reputation)",
+                    "GoldChange": 5,
+                    "ReputationChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "Grateful Traveler",
+            "Description": "The traveler, now well-rested, offers you a rare artifact in gratitude.",
+            "Type": "Special",
+            "Options": [
+                {
+                    "Description": "Accept the artifact (+15 Gold, +5 Reputation)",
+                    "GoldChange": 15,
+                    "ReputationChange": 5
+                },
+                {
+                    "Description": "Refuse and ask him to leave (+10 Reputation)",
+                    "ReputationChange": 10
+                }
+            ]
+        },
+        {
+            "Title": "Noble's Heir in Trouble",
+            "Description": "A young noble is caught in a scandal. His family seeks your help in silencing rumors.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Help cover up the scandal (+10 Nobles Affinity, -5 Reputation)",
+                    "NoblesAffinityChange": 10,
+                    "ReputationChange": -5
+                },
+                {
+                    "Description": "Expose the truth (-10 Nobles Affinity, +10 Reputation)",
+                    "NoblesAffinityChange": -10,
+                    "ReputationChange": 10
+                }
+            ]
+        },
+        {
+            "Title": "The Merchant\u2019s Gamble",
+            "Description": "A wealthy merchant offers a risky investment opportunity.",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Invest 20 Gold (50% chance to earn +40 Gold)",
+                    "GoldChange": -20
+                },
+                {
+                    "Description": "Decline (-5 Merchant Affinity)",
+                    "MerchantAffinityChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "A Suspicious Shipment",
+            "Description": "A group of armed men is seen unloading crates in the dead of night.",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Investigate the shipment (+5 Militia Affinity, risk of retaliation)",
+                    "MilitiaAffinityChange": 5,
+                    "FollowUpEventID": "BlackMarketRaid"
+                },
+                {
+                    "Description": "Ignore it (-5 Reputation, +10 Gold)",
+                    "ReputationChange": -5,
+                    "GoldChange": 10
+                }
+            ]
+        },
+        {
+            "Title": "Black Market Raid",
+            "Description": "The shipment contained smuggled weapons. The smugglers retaliate!",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Fight them off (-5 Militia Affinity, +10 Reputation)",
+                    "MilitiaAffinityChange": -5,
+                    "ReputationChange": 10
+                },
+                {
+                    "Description": "Bribe them to leave (-15 Gold)",
+                    "GoldChange": -15
+                }
+            ]
+        },
+        {
+            "Title": "A Harsh Winter",
+            "Description": "A brutal winter has caused food shortages in the village.",
+            "Type": "Seasonal",
+            "Options": [
+                {
+                    "Description": "Distribute food to the poor (-10 Gold, +10 Reputation)",
+                    "GoldChange": -10,
+                    "ReputationChange": 10
+                },
+                {
+                    "Description": "Hoard supplies for yourself (+10 Gold, -10 Reputation)",
+                    "GoldChange": 10,
+                    "ReputationChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "A Secret Letter",
+            "Description": "A sealed letter arrives for you, marked with a noble\u2019s crest.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Deliver it to the intended recipient (+5 Nobles Affinity)",
+                    "NoblesAffinityChange": 5
+                },
+                {
+                    "Description": "Open and read it (-5 Nobles Affinity, chance to uncover a secret)",
+                    "NoblesAffinityChange": -5,
+                    "FollowUpEventID": "NobleConspiracy"
+                }
+            ]
+        },
+        {
+            "Title": "Noble Conspiracy",
+            "Description": "The letter reveals a plot against the ruling house. What will you do?",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Warn the nobles (+10 Nobles Affinity, -5 Reputation)",
+                    "NoblesAffinityChange": 10,
+                    "ReputationChange": -5
+                },
+                {
+                    "Description": "Keep it secret (+15 Reputation, -10 Nobles Affinity)",
+                    "ReputationChange": 15,
+                    "NoblesAffinityChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "A Noble's Request",
+            "Description": "A noble asks you to increase the taxes on merchants. How do you respond?",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Approve the tax hike (+10 Nobles Affinity, -10 Merchant Affinity)",
+                    "NoblesAffinityChange": 10,
+                    "MerchantAffinityChange": -10,
+                    "FollowUpEventID": "MerchantProtest"
+                },
+                {
+                    "Description": "Reject the tax increase (-10 Nobles Affinity, +10 Merchant Affinity)",
+                    "NoblesAffinityChange": -10,
+                    "MerchantAffinityChange": 10
+                }
+            ]
+        },
+        {
+            "Title": "Merchant Protest",
+            "Description": "Angered by the new taxes, the merchants organize a protest in the marketplace.",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Send the militia to disperse them (-5 Militia Affinity, +5 Nobles Affinity)",
+                    "MilitiaAffinityChange": -5,
+                    "NoblesAffinityChange": 5
+                },
+                {
+                    "Description": "Negotiate with the merchants (+5 Merchant Affinity, -5 Nobles Affinity)",
+                    "MerchantAffinityChange": 5,
+                    "NoblesAffinityChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "Militia Training Request",
+            "Description": "The militia requests additional funding for better training.",
+            "Type": "Military",
+            "Options": [
+                {
+                    "Description": "Provide funding (-15 Gold, +10 Militia Affinity)",
+                    "GoldChange": -15,
+                    "MilitiaAffinityChange": 10,
+                    "FollowUpEventID": "MilitiaGainsPower"
+                },
+                {
+                    "Description": "Refuse funding (-10 Militia Affinity, +5 Nobles Affinity)",
+                    "MilitiaAffinityChange": -10,
+                    "NoblesAffinityChange": 5
+                }
+            ]
+        },
+        {
+            "Title": "Militia Gains Power",
+            "Description": "With increased funding, the militia starts exerting more influence in the region.",
+            "Type": "Military",
+            "Options": [
+                {
+                    "Description": "Encourage their growth (+10 Militia Affinity, -5 Nobles Affinity)",
+                    "MilitiaAffinityChange": 10,
+                    "NoblesAffinityChange": -5
+                },
+                {
+                    "Description": "Warn them not to overstep (-10 Militia Affinity, +5 Nobles Affinity)",
+                    "MilitiaAffinityChange": -10,
+                    "NoblesAffinityChange": 5
+                }
+            ]
+        },
+        {
+            "Title": "A Secret Merchant Deal",
+            "Description": "A powerful merchant offers you a deal that could anger the nobles.",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Accept the deal (+15 Merchant Affinity, -10 Nobles Affinity)",
+                    "MerchantAffinityChange": 15,
+                    "NoblesAffinityChange": -10,
+                    "FollowUpEventID": "NobleRetaliation"
+                },
+                {
+                    "Description": "Refuse to avoid conflict (+5 Nobles Affinity, -5 Merchant Affinity)",
+                    "NoblesAffinityChange": 5,
+                    "MerchantAffinityChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "Noble Retaliation",
+            "Description": "The nobles respond by imposing trade restrictions, angering the merchants.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Support the merchants (-10 Nobles Affinity, +10 Merchant Affinity)",
+                    "NoblesAffinityChange": -10,
+                    "MerchantAffinityChange": 10
+                },
+                {
+                    "Description": "Side with the nobles (+10 Nobles Affinity, -10 Merchant Affinity)",
+                    "NoblesAffinityChange": 10,
+                    "MerchantAffinityChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "The King's Decree",
+            "Description": "The king has issued a decree that will greatly affect the balance of power in your village.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Support the decree (+15 Nobles Affinity, -10 Merchant Affinity, -5 Militia Affinity)",
+                    "NoblesAffinityChange": 15,
+                    "MerchantAffinityChange": -10,
+                    "MilitiaAffinityChange": -5,
+                    "FollowUpEventID": "MerchantBacklash"
+                },
+                {
+                    "Description": "Oppose the decree (-15 Nobles Affinity, +10 Merchant Affinity, +5 Militia Affinity)",
+                    "NoblesAffinityChange": -15,
+                    "MerchantAffinityChange": 10,
+                    "MilitiaAffinityChange": 5,
+                    "FollowUpEventID": "NobleRetribution"
+                }
+            ]
+        },
+        {
+            "Title": "Merchant Backlash",
+            "Description": "The merchants are furious and threaten to cut off supplies to the village.",
+            "Type": "Trade",
+            "Options": [
+                {
+                    "Description": "Appease the merchants (-10 Nobles Affinity, +10 Merchant Affinity)",
+                    "NoblesAffinityChange": -10,
+                    "MerchantAffinityChange": 10
+                },
+                {
+                    "Description": "Ignore their threats (-5 Gold, -10 Merchant Affinity)",
+                    "GoldChange": -5,
+                    "MerchantAffinityChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "Noble Retribution",
+            "Description": "The nobles are enraged by your defiance and threaten to seize your land.",
+            "Type": "Political",
+            "Options": [
+                {
+                    "Description": "Beg for forgiveness (-10 Reputation, +5 Nobles Affinity)",
+                    "ReputationChange": -10,
+                    "NoblesAffinityChange": 5
+                },
+                {
+                    "Description": "Defy them (+10 Militia Affinity, -15 Nobles Affinity)",
+                    "MilitiaAffinityChange": 10,
+                    "NoblesAffinityChange": -15,
+                    "FollowUpEventID": "CivilUnrest"
+                }
+            ]
+        },
+        {
+            "Title": "Civil Unrest",
+            "Description": "The village is on the brink of civil war due to growing tensions.",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Side with the nobles (-15 Militia Affinity, +15 Nobles Affinity)",
+                    "MilitiaAffinityChange": -15,
+                    "NoblesAffinityChange": 15
+                },
+                {
+                    "Description": "Join the militia rebellion (+15 Militia Affinity, -15 Nobles Affinity)",
+                    "MilitiaAffinityChange": 15,
+                    "NoblesAffinityChange": -15,
+                    "FollowUpEventID": "RevolutionOutcome"
+                }
+            ]
+        },
+        {
+            "Title": "Revolution Outcome",
+            "Description": "The battle has ended. A new order is established.",
+            "Type": "Ending",
+            "Options": [
+                {
+                    "Description": "The nobles win (Noble Dominance Ending)",
+                    "FollowUpEventID": "NobleDominance"
+                },
+                {
+                    "Description": "The militia takes over (Militia Dictatorship Ending)",
+                    "FollowUpEventID": "MilitiaRule"
+                }
+            ]
+        },
+        {
+            "Title": "Noble Dominance",
+            "Description": "The nobles have consolidated their power. You live under their rule.",
+            "Type": "Ending",
+            "Options": [
+                {
+                    "Description": "Game Over - Restart",
+                    "FollowUpEventID": null
+                }
+            ]
+        },
+        {
+            "Title": "Militia Rule",
+            "Description": "The militia has seized control, ruling the village with an iron fist.",
+            "Type": "Ending",
+            "Options": [
+                {
+                    "Description": "Game Over - Restart",
+                    "FollowUpEventID": null
+                }
+            ]
+        },
+        {
+            "Title": "The Howling at Midnight",
+            "Description": "Lately, you've heard eerie howls echoing through the night. Some villagers whisper about an ancient curse.",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Investigate the forest at night (-5 Reputation, risk of injury)",
+                    "ReputationChange": -5,
+                    "FollowUpEventID": "WolfEncounter"
+                },
+                {
+                    "Description": "Ignore the rumors (+5 Nobles Affinity, -5 Reputation)",
+                    "NoblesAffinityChange": 5,
+                    "ReputationChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "Wolf Encounter",
+            "Description": "You find tracks leading deep into the woods. A pair of glowing eyes stare back at you.",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Follow the creature (-10 Gold, risk of ambush)",
+                    "GoldChange": -10,
+                    "FollowUpEventID": "TheMarkedOne"
+                },
+                {
+                    "Description": "Run back to the village (-10 Reputation, -5 Militia Affinity)",
+                    "ReputationChange": -10,
+                    "MilitiaAffinityChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "The Marked One",
+            "Description": "A strange figure greets you. 'You have been chosen.' A bite burns into your arm.",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Accept your fate (+10 Reputation, -10 Nobles Affinity)",
+                    "ReputationChange": 10,
+                    "NoblesAffinityChange": -10,
+                    "FollowUpEventID": "TheMoonlitTrial"
+                },
+                {
+                    "Description": "Reject the curse (-5 Reputation, risk of exile)",
+                    "ReputationChange": -5,
+                    "FollowUpEventID": "CursedRejection"
+                }
+            ]
+        },
+        {
+            "Title": "Cursed Rejection",
+            "Description": "The villagers sense something is different about you. They start avoiding you.",
+            "Type": "Crisis",
+            "Options": [
+                {
+                    "Description": "Flee into the wilderness (-20 Reputation, -10 Merchant Affinity)",
+                    "ReputationChange": -20,
+                    "MerchantAffinityChange": -10,
+                    "FollowUpEventID": "TheForestDweller"
+                },
+                {
+                    "Description": "Convince them you're normal (+10 Nobles Affinity, -5 Reputation)",
+                    "NoblesAffinityChange": 10,
+                    "ReputationChange": -5
+                }
+            ]
+        },
+        {
+            "Title": "The Moonlit Trial",
+            "Description": "You feel different under the full moon. The power inside you grows.",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Embrace the transformation (+10 Reputation, +10 Militia Affinity)",
+                    "ReputationChange": 10,
+                    "MilitiaAffinityChange": 10,
+                    "FollowUpEventID": "TheWolfRitual"
+                },
+                {
+                    "Description": "Resist it (-10 Reputation, risk of exposure)",
+                    "ReputationChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "The Wolf Ritual",
+            "Description": "A pack of wolves surrounds you. They bow as if recognizing you as one of their own.",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Swear loyalty to the wolf pack (+15 Reputation, -10 Nobles Affinity)",
+                    "ReputationChange": 15,
+                    "NoblesAffinityChange": -10,
+                    "FollowUpEventID": "TheWolfKingProphecy"
+                },
+                {
+                    "Description": "Run back to the village (-10 Reputation, risk of being hunted)",
+                    "ReputationChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "The Wolf King Prophecy",
+            "Description": "The elder wolf speaks. 'The Wolf King shall rise when the village is weak.'",
+            "Type": "Mystery",
+            "Options": [
+                {
+                    "Description": "Prepare for the prophecy (+20 Militia Affinity, -10 Merchant Affinity)",
+                    "MilitiaAffinityChange": 20,
+                    "MerchantAffinityChange": -10,
+                    "FollowUpEventID": "TheFinalNight"
+                },
+                {
+                    "Description": "Ignore it (+10 Nobles Affinity, -10 Reputation)",
+                    "NoblesAffinityChange": 10,
+                    "ReputationChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "The Final Night",
+            "Description": "The village is vulnerable. The moon is full. The wolves are waiting for your command.",
+            "Type": "Ending",
+            "Options": [
+                {
+                    "Description": "Lead the wolves into the village (Wolf King Ending)",
+                    "FollowUpEventID": "WolfKingEnding"
+                },
+                {
+                    "Description": "Abandon the wolves (+10 Reputation, -10 Militia Affinity)",
+                    "ReputationChange": 10,
+                    "MilitiaAffinityChange": -10
+                }
+            ]
+        },
+        {
+            "Title": "Wolf King Ending",
+            "Description": "You have become the Wolf King. The village now belongs to the pack.",
+            "Type": "Ending",
+            "Options": [
+                {
+                    "Description": "Game Over - Restart",
+                    "FollowUpEventID": null
+                }
+            ]
+        }
+    ]
+}
