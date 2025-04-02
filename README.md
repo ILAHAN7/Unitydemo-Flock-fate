@@ -1,5 +1,5 @@
 # Unitydemo-Flock-fate
-
+------------------------------------------------------------------------------------------
                              +----------------------+
                              |     GameManager      |
                              | (Initializes game)   |
@@ -27,7 +27,7 @@
 |     event.json       |
 | (Raw event data)     |
 +----------------------+
-
+----------------------------------------------------------------------------------------------
 
 1. GameManager.cs
 Initializes the game.
@@ -43,13 +43,13 @@ Responsible for loading events from Resources/Event.json.
 Deserializes JSON into a list of GameEvent objects.
 Stores them in a dictionary using the event title as the key.
 Provides:
-
+---------------------------------------------------------
 GetAllEventIDs() – returns all loaded event keys.
 GetEventByID() – fetches a specific event by title.
-
+----------------------------------------------------------
 3. GameEvent.cs
 Defines the structure of a single event:
-
+----------------------------------------------------------
 class GameEvent {
     string Title;
     string Description;
@@ -58,7 +58,8 @@ class GameEvent {
     string FollowUpEventID;
 }
 Each event includes options (choices), each defined as:
-
+---------------------------------------------------------
+--------------------------------------------------------------
 class EventOption {
     string Description;
     int GoldChange;
@@ -69,6 +70,7 @@ class EventOption {
     
     void ApplyEffects(Player player);
 }
+------------------------------------------------------------
 So, an option might give gold, reduce reputation, or trigger a follow-up event.
 
 4. UIManager.cs
