@@ -1,33 +1,4 @@
 # Unitydemo-Flock-fate
-------------------------------------------------------------------------------------------
-                             +----------------------+
-                             |     GameManager      |
-                             | (Initializes game)   |
-                             +----------+-----------+
-                                        |
-        +-------------------------------+-------------------------------+
-        |                               |                               |
-        v                               v                               v
-+----------------------+     +----------------------+     +----------------------+
-|     EventLoader       |     |      UIManager       |     |     EventSystem      |
-| (Loads event.json →   |     | (Handles UI, drag,   |     | (Fetches events      |
-|  Dictionary<string,   |     |  button logic, etc)  |     |  from EventLoader)   |
-|      GameEvent>)      |     +----------+-----------+     +----------+-----------+
-+----------+------------+                |                              |
-           |                             |                              |
-           v                             v                              v
-+----------------------+     +----------------------+     +----------------------+
-|     GameEvent         |<----|       Player         |<----|     EventOption      |
-| (Title, Desc, Options,|     | (Stats: Gold, Rep,   |     | (Effect, FollowUpID) |
-|  ImagePath, FollowUp) |     |  Affinities, Sheep)  |     +----------------------+
-+----------+------------+     +----------------------+
-           |
-           v
-+----------------------+
-|     event.json       |
-| (Raw event data)     |
-+----------------------+
-----------------------------------------------------------------------------------------------
 
 1. GameManager.cs
 Initializes the game.
@@ -49,7 +20,7 @@ GetEventByID() – fetches a specific event by title.
 ----------------------------------------------------------
 3. GameEvent.cs
 Defines the structure of a single event:
-----------------------------------------------------------
+
 class GameEvent {
     string Title;
     string Description;
@@ -58,8 +29,7 @@ class GameEvent {
     string FollowUpEventID;
 }
 Each event includes options (choices), each defined as:
----------------------------------------------------------
---------------------------------------------------------------
+
 class EventOption {
     string Description;
     int GoldChange;
@@ -70,7 +40,6 @@ class EventOption {
     
     void ApplyEffects(Player player);
 }
-------------------------------------------------------------
 So, an option might give gold, reduce reputation, or trigger a follow-up event.
 
 4. UIManager.cs
@@ -107,6 +76,38 @@ Title, Description, Type, Options, and optional FollowUpEventID.
 Supports branching narrative:
 Some options lead to follow-up events like "TreasureHunt" or "GratefulTraveler".
 Others can trigger game-ending events such as "WolfKingEnding"
+
+
+
+
+
+                             +----------------------+
+                             |     GameManager      |
+                             | (Initializes game)   |
+                             +----------+-----------+
+                                        |
+        +-------------------------------+-------------------------------+
+        |                               |                               |
+        v                               v                               v
++----------------------+     +----------------------+     +----------------------+
+|     EventLoader       |     |      UIManager       |     |     EventSystem      |
+| (Loads event.json →   |     | (Handles UI, drag,   |     | (Fetches events      |
+|  Dictionary<string,   |     |  button logic, etc)  |     |  from EventLoader)   |
+|      GameEvent>)      |     +----------+-----------+     +----------+-----------+
++----------+------------+                |                              |
+           |                             |                              |
+           v                             v                              v
++----------------------+     +----------------------+     +----------------------+
+|     GameEvent         |<----|       Player         |<----|     EventOption      |
+| (Title, Desc, Options,|     | (Stats: Gold, Rep,   |     | (Effect, FollowUpID) |
+|  ImagePath, FollowUp) |     |  Affinities, Sheep)  |     +----------------------+
++----------+------------+     +----------------------+
+           |
+           v
++----------------------+
+|     event.json       |
+| (Raw event data)     |
++----------------------+
 
 
 
